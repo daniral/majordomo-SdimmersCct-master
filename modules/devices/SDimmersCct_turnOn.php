@@ -1,14 +1,14 @@
 <?php
 
-$brightLevelSaved=$this->getProperty('brightLevelSaved');
+$brightnessLevelSaved=$this->getProperty('brightnessLevelSaved');
 $cctLevelSaved=$this->getProperty('cctLevelSaved');
-$brightSetMaxTurnOn = $this->getProperty('brightSetMaxTurnOn');
+$brightnessSetMaxTurnOn = $this->getProperty('brightnessSetMaxTurnOn');
 $cctSetMaxTurnOn = $this->getProperty('cctSetMaxTurnOn');
 
-if ($brightLevelSaved && !$brightSetMaxTurnOn) {
-   $this->setProperty('brightLevel', $brightLevelSaved);
+if ($brightnessLevelSaved && !$brightnessSetMaxTurnOn) {
+   $this->setProperty('brightnessLevel', $brightnessLevelSaved);
 } else {
-   $this->setProperty('brightLevel', 100);
+   $this->setProperty('brightnessLevel', 100);
 }
 
 if ($cctLevelSaved && !$cctSetMaxTurnOn) {

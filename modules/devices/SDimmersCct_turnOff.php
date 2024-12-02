@@ -1,3 +1,3 @@
 <?php
 
-$this->setProperty('brightLevel', 0);
+$this->setProperty('brightnessLevel', 0);

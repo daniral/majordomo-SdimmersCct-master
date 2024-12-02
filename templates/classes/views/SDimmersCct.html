@@ -1,14 +1,14 @@
 <script type="text/javascript">
-    var dimmer%.object_id%brightLevel=%.brightLevel%;
+    var dimmer%.object_id%brightnessLevel=%.brightnessLevel%;
     var dimmer%.object_id%cctLevel=%.cctLevel%;
     var dimmer%.object_id%Timer=0;
 
     function sendNewbrightLevel%.object_id%() {
-        setGlobal("%.object_title%.brightLevel",dimmer%.object_id%brightLevel);
+        setGlobal("%.object_title%.brightnessLevel",dimmer%.object_id%brightnessLevel);
     }
     function dimmerSetbrightLevel%.object_id%(val) {
-		dimmer%.object_id%brightLevel=val;
-        $('#dimmer%.object_id%_brightLevel').html(dimmer%.object_id%brightLevel);
+		dimmer%.object_id%brightnessLevel=val;
+        $('#dimmer%.object_id%_brightLevel').html(dimmer%.object_id%brightnessLevel);
         sendNewbrightLevel%.object_id%();
     }
 
@@ -29,8 +29,8 @@
 </div>
 <p>
 
- <div class="device-details"> <span id="dimmer%.object_id%_brightLevel">Яркость: %.brightLevel%</span></div>
-  <input id="dimmerSelect%.object_id%" type="range" min="0" max="100" step="1" value="%.brightLevel%" oninput="dimmerSetbrightLevel%.object_id%(this.value);">
+ <div class="device-details"> <span id="dimmer%.object_id%_brightLevel">Яркость: %.brightnessLevel%</span></div>
+  <input id="dimmerSelect%.object_id%" type="range" min="0" max="100" step="1" value="%.brightnessLevel%" oninput="dimmerSetbrightLevel%.object_id%(this.value);">
  
  <div class="device-details"> <span id="dimmer%.object_id%_cctLevel">Температура: %.cctLevel%</span></div>
   <input id="dimmerSelect%.object_id%" type="range" min="0" max="100" step="1" value="%.cctLevel%" oninput="dimmerSetcctLevel%.object_id%(this.value);">

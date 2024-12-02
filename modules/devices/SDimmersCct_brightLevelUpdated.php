@@ -1,18 +1,18 @@
 <?php
 
-$brightLevel = $this->getProperty('brightLevel');
-$brightMinWork = $this->getProperty('brightMinWork');
-$brightMaxWork = $this->getProperty('brightMaxWork');
-$brightLevelWork = $this->getProperty('brightLevelWork');
+$brightnessLevel = $this->getProperty('brightnessLevel');
+$brightnessMinWork = $this->getProperty('brightnessMinWork');
+$brightnessMaxWork = $this->getProperty('brightnessMaxWork');
+$brightnessLevelWork = $this->getProperty('brightnessLevelWork');
 
-if ($brightLevel > 0) {
-	$this->setProperty('brightLevelSaved', $brightLevel);
+if ($brightnessLevel > 0) {
+	$this->setProperty('brightnessLevelSaved', $brightnessLevel);
 }
 
-if ($brightMinWork != $brightMaxWork) {
-    $brightLevelWork = round($brightMinWork + round(($brightMaxWork - $brightMinWork) * $brightLevel / 100));
-    $diffbrightLevel = abs($this->getProperty('brightLevelWork') - $brightLevelWork);
+if ($brightnessMinWork != $brightnessMaxWork) {
+    $brightnessLevelWork = round($brightnessMinWork + round(($brightnessMaxWork - $brightnessMinWork) * $brightnessLevel / 100));
+    $diffbrightLevel = abs($this->getProperty('brightnessLevelWork') - $brightnessLevelWork);
     if ($diffbrightLevel >= 5) {
-        $this->setProperty('brightLevelWork', $brightLevelWork);
+        $this->setProperty('brightnessLevelWork', $brightnessLevelWork);
     }
 }

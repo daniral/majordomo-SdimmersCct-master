@@ -3,20 +3,20 @@
 $status = $this->getProperty('status');
 $linked_room = $this->getProperty('linkedRoom');
 
-$brightLevel = $this->getProperty('brightLevel');
-$brightLevelSaved = $this->getProperty('brightLevelSaved');
+$brightnessLevel = $this->getProperty('brightnessLevel');
+$brightnessLevelSaved = $this->getProperty('brightnessLevelSaved');
 
 $cctLevel = $this->getProperty('cctLevel');
 $cctLevelSaved = $this->getProperty('cctLevelSaved');
 
-$brightSetMaxTurnOn = $this->getProperty('brightSetMaxTurnOn');
+$brightnessSetMaxTurnOn = $this->getProperty('brightnessSetMaxTurnOn');
 $cctSetMaxTurnOn = $this->getProperty('cctSetMaxTurnOn');
 
 if ($status > 0) {
-	$this->setProperty('brightLevel', $brightLevelSaved);
+	$this->setProperty('brightnessLevel', $brightnessLevelSaved);
 	$this->setProperty('cctLevelSaved', $cctLevel);
 } else {
-	$this->setProperty('brightLevel', 0);
+	$this->setProperty('brightnessLevel', 0);
 }
 
 if ($params['NEW_VALUE'] && $linked_room && $this->getProperty('isActivity')) {
