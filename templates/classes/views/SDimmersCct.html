@@ -1,0 +1,38 @@
+<script type="text/javascript">
+    var dimmer%.object_id%brightLevel=%.brightLevel%;
+    var dimmer%.object_id%cctLevel=%.cctLevel%;
+    var dimmer%.object_id%Timer=0;
+
+    function sendNewbrightLevel%.object_id%() {
+        setGlobal("%.object_title%.brightLevel",dimmer%.object_id%brightLevel);
+    }
+    function dimmerSetbrightLevel%.object_id%(val) {
+		dimmer%.object_id%brightLevel=val;
+        $('#dimmer%.object_id%_brightLevel').html(dimmer%.object_id%brightLevel);
+        sendNewbrightLevel%.object_id%();
+    }
+
+    function sendNewcctLevel%.object_id%() {
+        setGlobal("%.object_title%.cctLevel",dimmer%.object_id%cctLevel);
+    }
+    function dimmerSetcctLevel%.object_id%(val) {
+        dimmer%.object_id%cctLevel=val;
+        $('#dimmer%.object_id%_cctLevel').html(dimmer%.object_id%cctLevel);
+        sendNewcctLevel%.object_id%();
+    }
+    
+</script>
+<div class="device-widget controller loadtype_%.loadType%">
+ <div onClick='$("#icon%.object_id%_light").addClass("pressed");setTimeout("$(\"#icon%.object_id%_light\").removeClass(\"pressed\");",300);callMethod("%.object_title%.switch");'>
+  <div class="device-icon %.status|"off;on"%" id="icon%.object_id%_light" style='%.icon|"background-image:url(%.icon%)"%'></div>
+  <div class="device-header">%.object_description%</div>
+</div>
+<p>
+
+ <div class="device-details"> <span id="dimmer%.object_id%_brightLevel">Яркость: %.brightLevel%</span></div>
+  <input id="dimmerSelect%.object_id%" type="range" min="0" max="100" step="1" value="%.brightLevel%" oninput="dimmerSetbrightLevel%.object_id%(this.value);">
+ 
+ <div class="device-details"> <span id="dimmer%.object_id%_cctLevel">Температура: %.cctLevel%</span></div>
+  <input id="dimmerSelect%.object_id%" type="range" min="0" max="100" step="1" value="%.cctLevel%" oninput="dimmerSetcctLevel%.object_id%(this.value);">
+ </p>
+</div>
